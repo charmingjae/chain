@@ -14,4 +14,12 @@ public class Transactions {
 	public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
 	
 	private static int sequence = 0;
+	
+	// Constructor
+	public Transactions(PublicKey from, PublicKey to, float value, ArrayList<TransactionInput> inputs) {
+		this.sender = from;
+		this.recipient = to;
+		this.value = value;
+		this.inputs = inputs;
+	}
 }
