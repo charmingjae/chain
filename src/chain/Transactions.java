@@ -11,4 +11,7 @@ public class Transactions {
 	public byte[] signature;
 	
 	public ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
+	public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
+	
+	private static int sequence = 0;
 }
