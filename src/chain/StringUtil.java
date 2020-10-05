@@ -1,8 +1,11 @@
 package chain;
 
+import java.security.Key;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
+import java.util.Base64;
 
 import com.google.gson.GsonBuilder;
 
@@ -56,4 +59,27 @@ public class StringUtil {
 			}
 			return output;
 		}
+		
+		public static boolean verifyECDSASig(PublicKey publicKey, String data, byte[] signature) {
+			try {
+				Signature ecdsaVerify = Signature.getInstance("ECDSA", "BC");
+				ecdsaVerify.initVerify(publicKey);
+				ecdsaVerify.update(signature);
+				return ecdsaVerify.verify(signature);
+			}
+			catch(Exception e) {
+				throw new RuntimeException(e);
+			}
+		}
+		
+<<<<<<< HEAD
+		public static String getString(Key key) {
+			return Base64.getEncoder().encodeToString(key.getEncoded());
+		}
+		
+		
+		
+=======
+>>>>>>> 84c392a3ab8c14a61b92b034d054438ecc48bc2b
+		
 }
