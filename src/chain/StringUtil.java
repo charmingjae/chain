@@ -72,14 +72,7 @@ public class StringUtil {
 			}
 		}
 		
-<<<<<<< HEAD
 		public static String getString(Key key) {
 			return Base64.getEncoder().encodeToString(key.getEncoded());
 		}
-		
-		
-		
-=======
->>>>>>> 84c392a3ab8c14a61b92b034d054438ecc48bc2b
-		
 }
