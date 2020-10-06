@@ -22,4 +22,14 @@ public class Transactions {
 		this.value = value;
 		this.inputs = inputs;
 	}
+	
+	// calculate Hash
+	private String calculateHash() {
+		sequence++;
+		return StringUtil.applySha256(
+				StringUtil.getStringFromKey(sender) +
+				StringUtil.getStringFromKey(recipient)+
+				Float.toHexString(value) + sequence
+		);
+	}
 }
